@@ -48,6 +48,7 @@ struct RunOnceMutexData;
 
 class RunOnceMutex {
 	RunOnceMutexData *data = nullptr;
+
 public:
 	RunOnceMutex(RunOnceMutexData *data_) : data(data_) {}
 	RunOnceMutex(const RunOnceMutex &rom) = delete;
@@ -64,4 +65,5 @@ RunOnceMutex GetRunOnceMutex(bool &already_running);
 #ifdef __APPLE__
 void EnableOSXVSync(bool enable);
 void EnableOSXDockIcon(bool enable);
+void InstallNSApplicationSubclass();
 #endif
